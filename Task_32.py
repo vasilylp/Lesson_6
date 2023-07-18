@@ -2,11 +2,19 @@
 значения которых принадлежат заданному диапазону (т.е. не меньше заданного минимума и не больше заданного
 максимума)"""
 
+# list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# # n,m = [int(z) for z in input("Введите размер шоколадки - две цифры через пробел : ").split()]
+# min_l,max_l =[int(z) for z in input("Введите min и max диапазона - две цифры через запятую :  ").split(",")]
+# list_2 = []
+# for i in range(len(list_1)):
+#     if max_l > list_1[i] > min_l:
+#         list_2.append(i)
+# print(list_2)
+
+# solution 2___________________________________________________________
 list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
-# n,m = [int(z) for z in input("Введите размер шоколадки - две цифры через пробел : ").split()]
-min_l,max_l =[int(z) for z in input("Введите min и max диапазона - две цифры через запятую :  ").split(",")]
-list_2 = []
-for i in range(len(list_1)):
-    if max_l > list_1[i] > min_l:
-        list_2.append(i)
-print(list_2)
+minn = 7
+maxx = 11
+res = list(map(lambda x : x if minn <= list_1[x] <= maxx else -1, range(len(list_1))))
+res = list(filter(lambda x : x > -1, res))
+print(res)
